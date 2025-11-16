@@ -1,6 +1,9 @@
 import express from "express";
+import logger from "./middleware/logger.js";
 
 const app = express();
+
+app.use(express.json());
 
 const courses = [
   { id: 1, name: "course1" },
