@@ -24,15 +24,16 @@ app.get("/", (req, res) => {
 
 app.post("/login", (req, res) => {
   const { username, password } = req.body;
+  const obj = JSON.parse(req.cookies.userCookie);
+
   if (username === demoUser.username && password === demoUser.password) {
     res.cookie("username", username, { maxAge: 90000, httpOnly: true });
     return res.redirect("/welcome");
   }
-  res.send("<h3>Invalid credentials. Please try again.</h3>");
   res.redirect("/");
 });
 
-app.get("/home", (req, res) => {
+app.get("/welcome", (req, res) => {
   const user = req.cookies.username;
   if (!user) return res.redirect("/");
   res.send(`
