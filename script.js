@@ -1,9 +1,10 @@
 import express from "express";
-import logger from "./middleware/logger.js";
 
 const app = express();
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static("public"));
 
 const courses = [
   { id: 1, name: "course1" },
@@ -18,6 +19,8 @@ app.get("/", (req, res) => {
 app.get("/api/courses", (req, res) => {
   res.send(courses);
 });
+
+app.post("/submit", (req, res) => {});
 
 app.listen(3000, () => {
   console.log("port is listening on 3000");

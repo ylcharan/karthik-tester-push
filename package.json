@@ -3,14 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "types": "module",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ylcharan/karthik-tester-push.git"
@@ -20,6 +19,8 @@
   },
   "homepage": "https://github.com/ylcharan/karthik-tester-push#readme",
   "dependencies": {
+    "body-parser": "^2.2.1",
+    "cookie-parser": "^1.4.7",
     "express": "^5.1.0",
     "express-validator": "^7.3.0"
   }
