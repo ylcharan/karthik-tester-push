@@ -1,8 +1,14 @@
-const EmitterEvents = require("events");
-const event = EmitterEvents();
+// import http from "http";
+// import fs from "fs";
 
-event.on("submit", () => {
-  console.log("Form got submitted.");
-});
+// http
+//   .createServer((req, res) => {
+//     fs.readFile("test.txt", "utf8", (err, data) => {
+//       if (err) return res.end("Error reading file");
 
-event.emit("submit");
+//       fs.writeFile("duplicate.txt", data, () => {
+//         res.end("file duplicated successfully");
+//       });
+//     });
+//   })
+//   .listen(8080);

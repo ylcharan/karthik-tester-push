@@ -1,39 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>End Term</title>
   </head>
+  <body>
+    <input type="text" id="textbox" style="width: 100%" />
+    <br />
+    <br />
+    <button onclick="dateTime()">Date & Time</button>
+    <button onclick="reset()">reset</button>
+  </body>
   <script>
-    const validateForm = () => {
-      const user = document.getElementById("user").value;
-      const pass = document.getElementById("pass").value;
-
-      const userRegex = /^\d{10}$/;
-      const passRegex = /^(?=.*[A-Z])(?=.*\d).{8,}$/;
-
-      if (!userRegex.test(user)) {
-        alert("Invalid user");
-        return false;
-      }
-
-      if (!passRegex.test(pass)) {
-        alert("Invalid pass");
-        return false;
-      }
-
-      console.log(user + " " + pass);
-      alert("Form submitted successfully");
-
-      return true;
+    const dateTime = () => {
+      document.getElementById("textbox").value = new Date().toString();
+    };
+    const reset = () => {
+      document.getElementById("textbox").value = "";
     };
   </script>
-  <body>
-    <form onsubmit="return validateForm()">
-      <input placeholder="user" id="user" />
-      <input placeholder="pass" id="pass" />
-      <button type="submit">Submit</button>
-    </form>
-  </body>
 </html>
